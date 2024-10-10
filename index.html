@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridhi Sureka Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1c1c1e;
+            color: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2c2c34;
+        }
+
+        nav .left {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d1ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+
+        /* First Section */
+        .firstsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 100px;
+            background-color: #1c1c1e;
+        }
+
+        .firstsection .leftsection {
+            width: 45%;
+            font-size: 50px;
+        }
+
+        .firstsection .leftsection span {
+            color: #00d1ff;
+        }
+
+        .firstsection .rightsection img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #2c2c34;
+            padding: 60px 100px;
+        }
+
+        .about-section h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #00d1ff;
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #d1d1d6;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background-color: #1c1c1e;
+            padding: 60px 100px;
+        }
+
+        .skills-section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #00d1ff;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .skill {
+            width: 250px;
+            background-color: #2c2c34;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .skill h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #00d1ff;
+        }
+
+        .progress-bar {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            background-color: #00d1ff;
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background-color: #1c1c1e;
+            padding: 60px 100px;
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #00d1ff;
+        }
+
+        .projects-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .project {
+            width: 300px;
+            background-color: #2c2c34;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .project h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #00d1ff;
+        }
+
+        .project p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #d1d1d6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #2c2c34;
+            padding: 60px 100px;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #00d1ff;
+            margin-bottom: 30px;
+        }
+
+        .contact-section .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #1c1c1e;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section .contact-form input,
+        .contact-section .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #2c2c34;
+            color: #fff;
+        }
+
+        .contact-section .contact-form button {
+            background-color: #00d1ff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            height:50px;
+            width: 100%;
+        }
+
+        .contact-section .contact-form button:hover {
+            background-color: #f1c40f;
+        }
+
+        footer {
+            background-color: #2c2c34;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        
+
+        <nav>
+            <div class="left">Ridhi's Portfolio</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- First Section -->
+    <section class="firstsection" id="home">
+        <div class="leftsection">
+            Hi, I am <span>Ridhi Sureka</span>
+            <p>A passionate Frontend Developer.</p>
+        </div>
+        <div class="rightsection">
+            <img src="1.jpg" alt="Ridhi">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2>About Me</h2>
+        <p>
+            I am currently in my second year at Vivekanand Institute of Professional Studies, pursuing a degree in
+            Computer Science. I have a keen interest in frontend development and design, and I’m actively working on
+            honing my skills in web development. I have experience working with modern CSS design techniques and
+            problem-solving in Java. I’m passionate about creating sleek, functional, and visually appealing websites
+            and applications.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-list">
+            <div class="skill">
+                <h4>HTML</h4>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>CSS</h4>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>JavaScript</h4>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>Python</h4>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>JAVA</h4>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>DSA</h4>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: 50%;"></div>
+                </div>
+
+            </div>
+            <div class="skill">
+                <h4>My SQL</h4>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>Canva</h4>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: 90%;"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <h2>Projects</h2>
+        <div class="projects-list">
+            <div class="project">
+                <h4>Gym website </h4>
+                <p>A sleek, modern gym website designed with gradient colors and mobile-friendly UI. It helps as a landing page for the customers queries  and enquires can be done for   a smooth user experience.</p>
+            </div>
+            <div class="project">
+                <h4>Portfolio Website</h4>
+                <p>A personal portfolio showcasing my work, skills, and projects using modern frontend technologies like HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project">
+                <h4>Sms spam detector</h4>
+                <p>A simple  predictive project that classifies sms as spam  made with python libraries and machine learning.</p>
+            </div>
+            
+            
+        </div>
+    </section>
+
+
+
+    <section class="contact-section" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-form">
+            <form id="contact-form">
+                <input type="text" name="from_name" placeholder="Your Name" required>
+                <input type="email" name="from_email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2024 Ridhi Sureka. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("YUH1-BDvoNGEffAiD");  // Replace with your actual EmailJS user ID
+        })();
+    
+        // Handling form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Send the form data to EmailJS
+            emailjs.sendForm('service_hdaysuq','template_bflv74a', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('SUCCESS! Message sent.');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('FAILED... ' + JSON.stringify(error));  // Display detailed error message
+                });
+        });
+    </script>
+    
